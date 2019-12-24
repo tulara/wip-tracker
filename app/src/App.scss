@@ -1,0 +1,11 @@
+// all the bulma things for now
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/elements/button.sass";
+@import "~bulma/sass/layout/section.sass";
+
+.App {
+  height: 100vh;
+  text-align: center;
+  padding-top: 1rem;
+}
