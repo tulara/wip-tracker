@@ -1,16 +1,6 @@
 const { ApolloServer, gql } = require('apollo-server');
-
-// retrieve me from db
-const projects = [
-    { 
-        name: "Zaubersocks",
-        recipient: "Grandma"
-    },
-    {
-        name: "Harry Potter scarf",
-        recipient: "Tristan"
-    }
-];
+const database = require('./database.js');
+const projects = require('./projects.js');
 
 const typeDefs = gql`
     type Project {
@@ -25,10 +15,11 @@ const typeDefs = gql`
 
 const resolvers = {
     Query: {
-        projects: async () => { return projects }
+        projects: async () => await projects.getAll()
     }
 }
 
+database.connect().then("totes connected?");
 const server = new ApolloServer({ typeDefs, resolvers});
 
 server.listen().then(({ url }) => {
