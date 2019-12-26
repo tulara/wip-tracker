@@ -8,7 +8,10 @@ import './App.scss';
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <ProjectList />
+      <section className="section">
+        <h1 className="title has-text-centered">Work In Progress</h1>
+        <ProjectList />
+      </section>
     </ApolloProvider>
   );
 };
