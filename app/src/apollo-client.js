@@ -4,8 +4,6 @@ import { HttpLink } from 'apollo-link-http';
 import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
 
-import gql from 'graphql-tag';
-
 const endpoint = process.env.API_ENDPOINT || 'http://localhost:4000/';
 
 const httpLink = new HttpLink({
@@ -31,16 +29,5 @@ const client = new ApolloClient({
   ]),
   cache
 });
-
-client.query({
-    query: gql`
-        query getAllProjects {
-            projects {
-                name
-                recipient
-            }
-        }
-    `
-}).then(result => console.log(result));
 
 export default client;
