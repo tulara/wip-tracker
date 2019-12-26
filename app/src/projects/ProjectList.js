@@ -8,6 +8,7 @@ import placeholder from './images/empty-placeholder.jpg';
 const GET_PROJECTS = gql`
     query getAllProjects {
         projects {
+            id
             name
             recipient
         }
@@ -20,12 +21,18 @@ const ProjectList = () => {
     return (
         <div className="columns is-multiline">
                 {data && data.projects && data.projects.map( project => (
-                    <div className="column">
-                        <div className="card">
+                    <div 
+                        className="column"
+                        key={project.id}  
+                    >
+                        <div className="card project-list-item">
                             <div className="card-image"> 
-                                <img className="image project-list-item-image" src={placeholder} />
+                                <img 
+                                    alt="your work in progress"
+                                    className="image project-list-item-image"
+                                    src={placeholder} />
                             </div>
-                            <div class="card-content">
+                            <div className="card-content">
                                 <h1 className="title is-5 has-text-centered">{project.name}</h1>
                                 <div className="content">
                                     <p><b>For: </b>{project.recipient}</p>

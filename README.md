@@ -5,6 +5,7 @@ The app directory holds a CRA bootstrapped front end. The api directory holds a 
 ## To Do
 [ ] list all wip projects in app from api
     [X] apollo client hooks to retrieve api data
-    [ ] mobile-first list to display projects and their recipients.
+    [X] mobile-first list to display projects and their recipients.
     [ ] functional test
     [ ] environment variables
+[ ] add a project

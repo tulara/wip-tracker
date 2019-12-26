@@ -4,6 +4,7 @@ const projects = require('./projects.js');
 
 const typeDefs = gql`
     type Project {
+        id: String
         name: String
         recipient: String
     }
