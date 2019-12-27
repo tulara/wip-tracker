@@ -8,8 +8,10 @@ The app directory holds a CRA bootstrapped front end. The api directory holds a 
     [X] ~~mobile-first list to display projects and their recipients.~~  
     [ ] functional test  
     [ ] environment variables  
+    [ ] host somewhere
 [X] add a project  
     [ ] reorganise  
+        - move modal outside new project button
 [ ] reload page once project added  
 [ ] PWA (do it all offline?)
 
