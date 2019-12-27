@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
+import Modal from '../components/Modal';
 
 const SAVE_NEW_PROJECT = gql`
     mutation saveProject($name: String!, $recipient: String) {
       saveProject(name:$name, recipient: $recipient)
     }
 `
-
-// const onModalClick = (saveProject) => {
-
-// }
 
 const NewProjectButton = () => {
     const [isModalActive, setIsModalActive] = useState(false);
@@ -42,11 +39,12 @@ const NewProjectButton = () => {
                 onClick={() => { setIsModalActive(true)}}
             >
                 Add new project
-            </button> 
-            <aside className={ ( isModalActive ? "is-active ": "") + "modal"}>
-                <div className="modal-background"></div>
-                <div className="modal-content">
-                    <form 
+            </button>
+            <Modal
+                isModalActive={isModalActive}
+                onCloseModal={setIsModalActive}
+            >
+                <form 
                         className="box"
                         onSubmit={(event) => {
                             event.preventDefault();
@@ -81,12 +79,7 @@ const NewProjectButton = () => {
                             Add
                         </button> 
                     </form>
-                    <button 
-                        aria-label="close"
-                        className="modal-close is-large"
-                        onClick={() => { setIsModalActive(false); }} ></button>
-                </div>
-            </aside>
+            </Modal> 
         </>
     )
 }
