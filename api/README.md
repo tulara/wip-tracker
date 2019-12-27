@@ -6,7 +6,8 @@ You'll need node installed.
 ```
 yarn start
 ```
-Note this will not watch for changes.  
+This uses nodemon to watch for code changes and automatically restart.
+
 By default the apollo server runs on port 4000.  
 Opening `http://localhost:4000/` will open a GraphQL Playground over the API.
 
