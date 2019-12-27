@@ -1,5 +1,7 @@
 $section-padding: 2rem 1.5rem;
 
+$input-placeholder-color: #000000;
+
 // all the bulma things for now, does individual imports in feature specific styles really help?
 // given it's likely I'll have to import the same things in many places
 @import "~bulma/bulma";

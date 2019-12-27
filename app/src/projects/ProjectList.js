@@ -34,8 +34,11 @@ const ProjectList = () => {
                             </div>
                             <div className="card-content">
                                 <h1 className="title is-5 has-text-centered">{project.name}</h1>
-                                <div className="content">
-                                    <p><b>For: </b>{project.recipient}</p>
+                                <div className="content project-list-item-recipient">
+                                    <span className="icon is-small is-left">
+                                        <i className="fas fa-user"></i>
+                                    </span>
+                                    <p>{project.recipient}</p>
                                 </div>
                             </div>
                         </div>

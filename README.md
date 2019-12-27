@@ -11,8 +11,11 @@ The app directory holds a CRA bootstrapped front end. The api directory holds a 
     [ ] host somewhere
 [X] add a project  
     [ ] reorganise  
-        - move modal outside new project button
+        - move modal outside new project button/ refactor
+    [ ] loading states
+    [ ] error states
 [ ] reload page once project added  
+[ ] go through tutorial https://www.apollographql.com/docs/tutorial/introduction/   
 [ ] PWA (do it all offline?)
 
 ## Interesting Notes/Things to explore

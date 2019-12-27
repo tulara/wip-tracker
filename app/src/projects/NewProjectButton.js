@@ -63,12 +63,15 @@ const NewProjectButton = () => {
                             </div>
                         </div>
                         <div className="field">
-                            <div className="control">
+                            <div className="control has-icons-left">
                                 <input 
                                     className="input"
                                     onChange={handleRecipientChange}
                                     type="text"
                                     placeholder="Who's it for?" />
+                                    <span className="icon is-small is-left">
+                                        <i className="fas fa-user"></i>
+                                    </span>
                             </div>
                         </div>
                         <button 
