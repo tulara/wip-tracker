@@ -15,6 +15,9 @@ const SAVE_NEW_PROJECT = gql`
 
 const NewProjectButton = () => {
     const [isModalActive, setIsModalActive] = useState(false);
+    const [name, setName] = useState();
+    const [recipient, setRecipient]= useState();
+
     const [saveProject] = useMutation(SAVE_NEW_PROJECT,
         {
             onCompleted() {
@@ -22,10 +25,14 @@ const NewProjectButton = () => {
             }
     });
 
+    const handleNameChange = event => {
+        const name = event.target.value;
+        setName(name);
+    }
 
-    const project = {
-        name: "A very fancy project",
-        recipient: "someone extra special"
+    const handleRecipientChange = event => {
+        const recipient = event.target.value;
+        setRecipient(recipient);
     }
 
     return (
@@ -43,13 +50,14 @@ const NewProjectButton = () => {
                         className="box"
                         onSubmit={(event) => {
                             event.preventDefault();
-                            saveProject({ variables: project });
+                            saveProject({ variables: { name, recipient }});
                         }}>
                         <h1 className="title">Add a new project</h1>
                         <div className="field">
                             <div className="control">
                                 <input 
                                     className="input"
+                                    onChange={handleNameChange}
                                     type="text"
                                     placeholder="Name of your project" />
                             </div>
@@ -58,6 +66,7 @@ const NewProjectButton = () => {
                             <div className="control">
                                 <input 
                                     className="input"
+                                    onChange={handleRecipientChange}
                                     type="text"
                                     placeholder="Who's it for?" />
                             </div>
