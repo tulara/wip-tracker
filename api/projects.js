@@ -15,7 +15,6 @@ const getAll = async () => {
 const saveProject = async (name, recipient) => {
     console.log(`attempting to save with name: ${name}, recipient: ${recipient}`);
     const project = new Project({name, recipient});
-    console.log(project);
 
     const saved = await project.save();
     console.log(`saved object with id ${saved}`);

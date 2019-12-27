@@ -9,9 +9,9 @@ The app directory holds a CRA bootstrapped front end. The api directory holds a 
     [ ] functional test
     [ ] environment variables
 [X] add a project
+    [ ] reorganise
 [ ] reload page once project added
 [ ] PWA (do it all offline?)
-[ ] reorganise
 
 ## Interesting Notes/Things to explore
 Mongoose is managing mongo ids?
