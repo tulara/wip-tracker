@@ -4,7 +4,7 @@
 ### server 
 You'll need node installed.
 ```
-node index.js
+yarn start
 ```
 Note this will not watch for changes.  
 By default the apollo server runs on port 4000.  
