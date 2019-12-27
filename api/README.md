@@ -35,12 +35,12 @@ IP address will be the host address for the docker daemon and the mongo default 
 ```
 
 ## To do
-[X] ~~Retrieve projects from database~~
-[X] ~~Add watcher for js changes to avoid having to keep restarting the server~~
-[ ] What are the different ways a mongo connection can fail? https://mongoosejs.com/docs/connections.html
+[X] ~~Retrieve projects from database~~  
+[X] ~~Add watcher for js changes to avoid having to keep restarting the server~~  
+[ ] What are the different ways a mongo connection can fail? https://mongoosejs.com/docs/connections.html  
 
-[ ] any remaining first run db instructions should move to start up script. Not sure I'll need this as mongo creates the db upon first insertion.
-[ ] Find out why I can't seem to use ES6 module syntax even though I'm running node 12.
+[ ] any remaining first run db instructions should move to start up script. Not sure I'll need this as mongo creates the db upon first insertion.  
+[ ] Find out why I can't seem to use ES6 module syntax even though I'm running node 12.  
 [ ] container for api in the docker-compose file using node 12
 
 ## References
