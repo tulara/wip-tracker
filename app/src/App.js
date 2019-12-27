@@ -2,7 +2,7 @@ import React from 'react';
 import client from './apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import ProjectList from './projects/ProjectList';
-import NewProjectButton from './projects/NewProjectButton';
+import AddNewProject from './projects/AddNewProject';
 
 import './App.scss';
 
@@ -12,7 +12,7 @@ const App = () => {
     <ApolloProvider client={client}>
       <section className="section has-text-centered">
         <h1 className="title has-text-centered">Work In Progress</h1>
-        <NewProjectButton />
+        <AddNewProject />
       </section>
       <section className="section">
         <ProjectList />
