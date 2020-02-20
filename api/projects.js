@@ -17,9 +17,9 @@ const saveProject = async (name, recipient) => {
     const project = new Project({name, recipient});
 
     const saved = await project.save();
-    console.log(`saved object with id ${saved}`);
+    console.log(`saved object ${saved}`);
     // handle failure
-    return saved._id;
+    return saved;
 } 
 
 const removeProject = async (id) => {

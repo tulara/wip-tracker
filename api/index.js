@@ -14,9 +14,7 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        saveProject(name: String!, recipient: String): String
-        # for now return object id, but later list of paginated projects?
-        # more likely updated object ()
+        saveProject(name: String!, recipient: String): Project
 
         removeProject(id: String!): Boolean
         # returns success or not for now, but could return updated project list?

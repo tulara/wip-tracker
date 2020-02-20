@@ -24,7 +24,11 @@ const REMOVE_PROJECT = gql`
 
 const SAVE_NEW_PROJECT = gql`
     mutation saveProject($name: String!, $recipient: String) {
-      saveProject(name:$name, recipient: $recipient)
+      saveProject(name:$name, recipient: $recipient) {
+          id
+          name
+          recipient
+      }
     }
 `
 
@@ -33,7 +37,15 @@ const WIPProjects = () => {
     const { data } = useQuery(GET_PROJECTS)
 
     const [saveProject] = useMutation(SAVE_NEW_PROJECT,
-        // update cache
+        {
+            update(cache, {data: {saveProject}}) {
+                const { projects } = cache.readQuery({query: GET_PROJECTS});
+                cache.writeQuery({
+                    query: GET_PROJECTS,
+                    data: {projects: projects.concat([saveProject])}
+                });
+            }
+        }
     );
 
     const removeProjectById = (id) => {
