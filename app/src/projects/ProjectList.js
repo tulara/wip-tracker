@@ -1,39 +1,12 @@
 import React from 'react';
-import { useQuery, useMutation } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
 
 import './projects.scss';
 import placeholder from './images/empty-placeholder.jpg';
 
-const GET_PROJECTS = gql`
-    query getAllProjects {
-        projects {
-            id
-            name
-            recipient
-        }
-    }
-`;
-
-const REMOVE_PROJECT = gql`
-    mutation removeProject($id: String!) {
-        removeProject(id: $id)
-    }
-`;
-
-const ProjectList = () => {
-    const [removeProject] = useMutation(REMOVE_PROJECT)
-    const { data } = useQuery(GET_PROJECTS)
-
-    const removeTheThing = (id) => {
-        console.log(`removing item with id ${id}`);
-        // stupid apollo structure
-        removeProject({ variables: {id}});
-    }
-
+const ProjectList = ({ projects, removeProject }) => {
     return (
         <div className="columns is-multiline">
-                {data && data.projects && data.projects.map( project => (
+                {projects && projects.map( project => (
                     <div 
                         className="column"
                         key={project.id}  
@@ -48,7 +21,7 @@ const ProjectList = () => {
                             <button
                                     aria-label="remove project"
                                     className="delete is-large project-list-item__close"
-                                    onClick={() => { removeTheThing(project.id) }} />
+                                    onClick={() => { removeProject(project.id) }} />
                             <div className="card-content">
                                 <h1 className="title is-5 has-text-centered">{project.name}</h1>
                                 <div className="content project-list-item-recipient">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from '../components/Modal';
 import NewProjectForm from './NewProjectForm';
 
-const AddNewProject = () => {
+const NewProjectButton = () => {
     const [isModalActive, setIsModalActive] = useState(false);
 
     return (
@@ -23,4 +23,4 @@ const AddNewProject = () => {
     )
 }
 
-export default AddNewProject;
+export default NewProjectButton;
