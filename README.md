@@ -20,7 +20,8 @@ The app directory holds a CRA bootstrapped front end. The api directory holds a 
 [ ] optimistic feedback?
 
 **IMAGES**
-[] For later: auth so users can't access each other's images 
+[ ] For later: auth so users can't access each other's images 
+[ ] Lock down grid so we don't have to deal with responsive image window
 
 [ ] go through tutorial https://www.apollographql.com/docs/tutorial/introduction/   
 [ ] PWA (do it all offline?)  

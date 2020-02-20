@@ -14,8 +14,13 @@
 
 .project-list-item-image {
     border-radius: 3px;
-    max-height: 200px;
+    height: 200px;
     overflow: hidden;
+}
+
+.project-list-item-image .image {
+    width: 100%;
+    height: auto;
 }
 
 .project-list-item-image .placeholder {
