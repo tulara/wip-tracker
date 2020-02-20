@@ -1,22 +1,25 @@
 import React from 'react';
 
 import './projects.scss';
-import placeholder from './images/empty-placeholder.jpg';
+ import placeholder from './images/empty-placeholder.jpg';
+//import pie from './images/pie.jpg';
 
 const ProjectList = ({ projects, removeProject }) => {
     return (
         <div className="columns is-multiline">
-                {projects && projects.map( project => (
+                {projects && projects.map( project => {
+                    console.log(project);
+                    return (
                     <div 
                         className="column"
                         key={project.id}  
                     >
                         <div className="card project-list-item">
-                            <div className="card-image"> 
+                            <div className="card-image project-list-item-image"> 
                                 <img 
                                     alt="your work in progress"
-                                    className="image project-list-item-image"
-                                    src={placeholder} />
+                                    className={project.image ? "image" : "image placeholder" }
+                                    src={project.image ? project.image : placeholder} />
                             </div>
                             <button
                                     aria-label="remove project"
@@ -33,7 +36,9 @@ const ProjectList = ({ projects, removeProject }) => {
                             </div>
                         </div>
                     </div>
-                ))}
+                )
+                }
+                )}
         </div>
     )
 }

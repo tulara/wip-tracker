@@ -3,7 +3,8 @@ const { Schema } = mongoose;
 
 const projectSchema = new Schema({
     name: String,
-    recipient: String
+    recipient: String,
+    image: String,
 });
 
 const Project = mongoose.model('projects', projectSchema);
@@ -12,9 +13,10 @@ const getAll = async () => {
     return await Project.find({}).exec();
 }
 
-const saveProject = async (name, recipient) => {
-    console.log(`attempting to save with name: ${name}, recipient: ${recipient}`);
-    const project = new Project({name, recipient});
+const saveProject = async (name, recipient, image) => {
+    // validation on user entered data (i.e. all these args)
+    console.log(`attempting to save with name: ${name}, recipient: ${recipient}, image: ${image}`);
+    const project = new Project({name, recipient, image});
 
     const saved = await project.save();
     console.log(`saved object ${saved}`);

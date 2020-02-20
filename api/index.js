@@ -7,6 +7,7 @@ const typeDefs = gql`
         id: String
         name: String
         recipient: String
+        image: String
     }
 
     type Query {
@@ -26,7 +27,7 @@ const resolvers = {
         projects: async () => await projects.getAll()
     },
     Mutation: {
-        saveProject: async (_, {name, recipient}) => await projects.saveProject(name, recipient),
+        saveProject: async (_, {name, recipient, image}) => await projects.saveProject(name, recipient, image),
         removeProject: async (_, {id}) => await projects.removeProject(id)
     }
 }

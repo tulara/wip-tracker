@@ -14,10 +14,13 @@ The app directory holds a CRA bootstrapped front end. The api directory holds a 
         - move modal outside new project button/ refactor
     [ ] loading states
     [ ] error states
-[X] reload page once project added  
+[X] reload page once project added /update and load from cache 
 
 [X] delete a project 
 [ ] optimistic feedback?
+
+**IMAGES**
+[] For later: auth so users can't access each other's images 
 
 [ ] go through tutorial https://www.apollographql.com/docs/tutorial/introduction/   
 [ ] PWA (do it all offline?)  
