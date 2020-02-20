@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import Modal from '../components/Modal';
 import NewProjectForm from './NewProjectForm';
 
-const NewProjectButton = () => {
+const NewProjectButton = ({ saveProject }) => {
     const [isModalActive, setIsModalActive] = useState(false);
+
+    const saveAndCloseModal = async (vars) => {
+        await saveProject(vars);
+        setIsModalActive(false);
+    }
 
     return (
         <>
@@ -17,7 +22,10 @@ const NewProjectButton = () => {
                 isModalActive={isModalActive}
                 onCloseModal={setIsModalActive}
             >
-                <NewProjectForm onCompletedSave={() => { setIsModalActive(false);}} />
+                <NewProjectForm 
+                    onCompletedSave={() => { setIsModalActive(false);}}
+                    saveProject={saveAndCloseModal}    
+                />
             </Modal> 
         </>
     )

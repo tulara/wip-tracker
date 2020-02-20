@@ -1,23 +1,8 @@
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
 
-const SAVE_NEW_PROJECT = gql`
-    mutation saveProject($name: String!, $recipient: String) {
-      saveProject(name:$name, recipient: $recipient)
-    }
-`
-
-const NewProjectForm = ({ onCompletedSave }) => {
+const NewProjectForm = ({ saveProject }) => {
     const [name, setName] = useState();
     const [recipient, setRecipient] = useState();
-
-    const [saveProject] = useMutation(SAVE_NEW_PROJECT,
-        { 
-            onCompleted() {
-                onCompletedSave();
-        }
-    });
 
     const handleNameChange = event => {
         const name = event.target.value;

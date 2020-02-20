@@ -22,9 +22,19 @@ const REMOVE_PROJECT = gql`
     }
 `;
 
+const SAVE_NEW_PROJECT = gql`
+    mutation saveProject($name: String!, $recipient: String) {
+      saveProject(name:$name, recipient: $recipient)
+    }
+`
+
 const WIPProjects = () => {
     const [removeProject] = useMutation(REMOVE_PROJECT)
     const { data } = useQuery(GET_PROJECTS)
+
+    const [saveProject] = useMutation(SAVE_NEW_PROJECT,
+        // update cache
+    );
 
     const removeProjectById = (id) => {
         console.log(`removing item with id ${id}`);
@@ -36,7 +46,7 @@ const WIPProjects = () => {
     <>
         <section className="section has-text-centered">
             <h1 className="title has-text-centered">Projects In Progress</h1>
-            <NewProjectButton />
+            <NewProjectButton saveProject={saveProject} />
         </section>
         <section className="section">
             {data && data.projects &&
