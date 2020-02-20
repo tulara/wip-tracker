@@ -15,6 +15,9 @@ The app directory holds a CRA bootstrapped front end. The api directory holds a 
     [ ] loading states
     [ ] error states
 [ ] reload page once project added  
+
+[ ] delete a project 
+
 [ ] go through tutorial https://www.apollographql.com/docs/tutorial/introduction/   
 [ ] PWA (do it all offline?)  
 [ ] do i have overlapping dependencies with react-apollo and @apollo/react-hooks? the fact that i can import useMutation from both seems to indicate so...

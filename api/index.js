@@ -17,6 +17,9 @@ const typeDefs = gql`
         saveProject(name: String!, recipient: String): String
         # for now return object id, but later list of paginated projects?
         # more likely updated object ()
+
+        removeProject(id: String!): Boolean
+        # returns success or not for now, but could return updated project list?
     }
 `;
 
@@ -25,7 +28,8 @@ const resolvers = {
         projects: async () => await projects.getAll()
     },
     Mutation: {
-        saveProject: async (_, {name, recipient}) => await projects.saveProject(name, recipient)
+        saveProject: async (_, {name, recipient}) => await projects.saveProject(name, recipient),
+        removeProject: async (_, {id}) => await projects.removeProject(id)
     }
 }
 
