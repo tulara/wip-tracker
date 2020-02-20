@@ -33,7 +33,6 @@ const SAVE_NEW_PROJECT = gql`
 `
 
 const WIPProjects = () => {
-    const [removeProject] = useMutation(REMOVE_PROJECT)
     const { data } = useQuery(GET_PROJECTS)
 
     const [saveProject] = useMutation(SAVE_NEW_PROJECT,
@@ -47,6 +46,20 @@ const WIPProjects = () => {
             }
         }
     );
+
+    const [removeProject] = useMutation(REMOVE_PROJECT,
+        {
+            update(cache, {data: {removeProject}}) {
+                console.log(removeProject)
+                const { projects } = cache.readQuery({query: GET_PROJECTS});
+                cache.writeQuery({
+                    query: GET_PROJECTS,
+                    data: { projects: projects.filter((p) => p.id !== removeProject) }
+                })
+            }
+        }
+        
+    )
 
     const removeProjectById = (id) => {
         console.log(`removing item with id ${id}`);

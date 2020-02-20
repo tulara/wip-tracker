@@ -16,8 +16,8 @@ const typeDefs = gql`
     type Mutation {
         saveProject(name: String!, recipient: String): Project
 
-        removeProject(id: String!): Boolean
-        # returns success or not for now, but could return updated project list?
+        removeProject(id: String!): String!
+        # returns the id of the project removed
     }
 `;
 

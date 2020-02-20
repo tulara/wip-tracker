@@ -24,14 +24,14 @@ const saveProject = async (name, recipient) => {
 
 const removeProject = async (id) => {
     console.log(`removing project with id: ${id}`);
-    return Project.findByIdAndDelete(id, (err) => {
+    await Project.findByIdAndDelete(id, (err) => {
         if(err) {
             console.log(err);
-            return false;
+           // return ""; // error string?
         }
-        console.log("successfully deleted");
-        return true;
-    })
+        console.log(`successfully deleted ${id}`);
+    });
+    return id;
 }
 
 module.exports = {
