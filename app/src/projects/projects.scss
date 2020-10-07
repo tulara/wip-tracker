@@ -3,6 +3,8 @@
 .card.project-list-item {
     position: relative;
     min-width: 15rem;
+    max-width: 20rem;
+    justify-content: flex-start;
 }
 
 .delete.project-list-item__close {
@@ -35,3 +37,4 @@
       padding-right: 1rem;  
     }
 }
+

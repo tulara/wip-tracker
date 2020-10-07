@@ -21,6 +21,8 @@ The app directory holds a CRA bootstrapped front end. The api directory holds a 
 
 **IMAGES**
 [ ] For later: auth so users can't access each other's images 
+// upload will have to go through server else how would you limit people uploading what they like.
+// fetch can retrieve location it was uploaded to
 [ ] Lock down grid so we don't have to deal with responsive image window
 
 [ ] go through tutorial https://www.apollographql.com/docs/tutorial/introduction/   

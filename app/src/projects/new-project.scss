@@ -1,0 +1,29 @@
+.new-project_upload {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-project__thumbnail {
+    display: flex;
+
+}
+
+.new-project__thumbnail-cta {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-project__thumbnail-container {
+    border: 1px lightgray solid;
+}
+
+.new-project__thumbnail-image {
+    height: 200px;
+}
+
+.new-project_form {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

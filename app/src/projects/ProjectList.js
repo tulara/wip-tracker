@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './projects.scss';
- import placeholder from './images/empty-placeholder.jpg';
+import placeholder from './images/empty-placeholder.jpg';
 //import pie from './images/pie.jpg';
 
 const ProjectList = ({ projects, removeProject }) => {

@@ -35,9 +35,13 @@ const SAVE_NEW_PROJECT = gql`
 
 const WIPProjects = () => {
     const { data } = useQuery(GET_PROJECTS)
+    console.log(data)
 
     const [saveProject] = useMutation(SAVE_NEW_PROJECT,
         {
+            refetchQueries:[{
+                query: GET_PROJECTS,
+            }],
             update(cache, {data: {saveProject}}) {
                 const { projects } = cache.readQuery({query: GET_PROJECTS});
                 cache.writeQuery({

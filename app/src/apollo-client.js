@@ -4,7 +4,8 @@ import { HttpLink } from 'apollo-link-http';
 import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
 
-const endpoint = process.env.API_ENDPOINT || 'http://localhost:4000/';
+
+const endpoint = process.env.API_ENDPOINT || 'http://localhost:4000/'; 
 
 const httpLink = new HttpLink({
     uri: endpoint,

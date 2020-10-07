@@ -32,6 +32,7 @@ IP address will be the host address for the docker daemon and the mongo default 
 ```
 > use wip-tracker
 > db.projects.save({ name: "Zaubersocks", recipient: "Grandma"})
+> db.projects.save({ name: "pie", recipient: "Gareth", image:"test-images\pie.jpg"})
 > db.projects.save({ name: "Harry Potter scarf", recipient: "Tristan"})
 ```
 
